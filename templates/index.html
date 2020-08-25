@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+    <hr class='my-4'>
+    <h2 style="text-align: center;">Welcome, {{ request.user.display_name }}!</h2>
+    <h3 style="text-align: center; color: gray"> Username: {{request.user.username}}</h3>
+    <hr class='my-4'>
+{% else %}
+    <hr class='my-4'>
+    <h2 style="text-align: center;">Please Create an Account or Sign In.</h2>
+    <hr class='my-4'>
+{% endif %}
+
+{% endblock  %}
